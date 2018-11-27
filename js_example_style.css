@@ -39,7 +39,8 @@ button[disabled] {
     opacity: .65;
 }
 .control {
-    margin-bottom: 3px;
+    margin: 15px auto;
+    text-align: center;
 }
 .err {
     color: red;
@@ -61,10 +62,18 @@ button[disabled] {
     text-wrap: unrestricted;
     padding-bottom: 0px;
     margin: 0px;
+    height: 100vh;
 }
 .hidden {
     display: none;
 }
 .small {
     max-width: 300px;
+}
+
+.container {
+    display: flex;
+}
+.align-center {
+    justify-content: space-around;
 }
