@@ -34,6 +34,11 @@
                   <div class="caption">Canvas Output</div>
               </div>
           </div>
+          <div id="serial">
+            <textarea>
+              serie :
+            </textarea>
+          </div>
         </div>
     </div>
     <script src="utils.js" type="text/javascript"></script>
@@ -66,11 +71,25 @@
         let tryIt = document.getElementById('tryIt');
         tryIt.addEventListener('click', () => {
             utils.executeCode('codeEditor');
+
+            //llamada a tesseract
+            var can = document.getElementById('canvasOutput')
+            result =Tesseract.recognize(can,{lang:'spa'})
+            .progress(function  (p) { console.log('progress', p)    })
+            .then(function (result) { console.log('result', result) 
+
+
+            })
+
+            var out = document.getElementById('serial')
+            out.append(result._resolve['text'])
         });
 
         utils.loadOpenCv(() => {
             tryIt.removeAttribute('disabled');
         });
+
+
     </script>
 </body>
 </html>
