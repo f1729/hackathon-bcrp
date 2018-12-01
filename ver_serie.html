@@ -74,15 +74,17 @@
 
             //llamada a tesseract
             var can = document.getElementById('canvasOutput')
-            result =Tesseract.recognize(can,{lang:'spa'})
-            .progress(function  (p) { console.log('progress', p)    })
-            .then(function (result) { console.log('result', result) 
-
-
+            Tesseract.recognize(can, {lang:'spa'})
+            .progress(function  (p) {
+              console.log('progress', p)    
             })
-
-            var out = document.getElementById('serial')
-            out.append(result._resolve['text'])
+            .then(function (result) {
+              console.log('DONEEEEE');
+              console.log('result', result) 
+              console.log(result.text);
+              var out = document.getElementById('serial');
+              out.append(result.text.trim());
+            })
         });
 
         utils.loadOpenCv(() => {
