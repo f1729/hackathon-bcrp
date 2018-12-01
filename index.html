@@ -21,7 +21,7 @@
   </script>
   <script type="text/javascript">
     const camera = document.getElementById('inputCamera');
-    camera.addEventListener('onchange', (file) => {
+    camera.addEventListener('change', (file) => {
       alert('EVENT DONE');
       const ouputFile = new FileReader();
       ouputFile.readAsDataURL(camera.files[0]);
