@@ -79,9 +79,6 @@
               console.log('progress', p)    
             })
             .then(function (result) {
-              console.log('DONEEEEE');
-              console.log('result', result) 
-              console.log(result.text);
               var out = document.getElementById('serial');
               out.innerHTML = result.text.trim();
             })
