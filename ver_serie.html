@@ -34,10 +34,10 @@
                   <div class="caption">Canvas Output</div>
               </div>
           </div>
-          <div id="serial">
-            <textarea>
-              serie :
-            </textarea>
+          <div style="display: flex;">
+            <p>Serie: </p>
+            <p id="serial">
+            </p>
           </div>
         </div>
     </div>
@@ -83,7 +83,7 @@
               console.log('result', result) 
               console.log(result.text);
               var out = document.getElementById('serial');
-              out.append(result.text.trim());
+              out.innerHTML = result.text.trim();
             })
         });
 
