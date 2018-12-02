@@ -87,29 +87,28 @@
 
         <!--  Billete anverso -->
 
-        <!-- 
+        <div style="position: relative;">
+          <div class="bcrp-logo anversoNumber" v-on:click="showModal = true;">
+            <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+          </div>
 
-        <div class="bcrp-logo anversoNumber">
-          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
-        </div>
+          <div class="bcrp-logo anversotrouxecolor" v-on:click="showModal = true;">
+            <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+          </div>
 
-        <div class="bcrp-logo anversotrouxecolor">
-          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
-        </div>
+          
+          <div class="bcrp-logo anversotira" v-on:click="showModal = true;">
+            <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+          </div>
 
-        
-        <div class="bcrp-logo anversotira">
-          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
-        </div>
+          <div class="bcrp-logo anversoMarcaAgua" v-on:click="showModal = true;">
+            <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+          </div>
 
-        <div class="bcrp-logo anversoMarcaAgua">
-          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
-        </div>
-
-        <div>
-          <img src="https://f1729.github.io/hackathon-bcrp/imagenes/billetes/20a.jpg" style="width: 300px;">
-        </div> -->
-
+          <div>
+            <img src="https://f1729.github.io/hackathon-bcrp/imagenes/billetes/20a.jpg" style="width: 300px;">
+          </div>
+        </div> 
 
         <!--  Billete reverso -->
         <!-- <div>
@@ -131,35 +130,34 @@
 
 
         <!-- modal de codigo de seguridad -->
-
-        <div class="modal">
-
-          <div class="bcrp-logo" style="position: absolute;top: 50%;width: 30px;left: 50%;margin-left: 44px;margin-top: -40px;">
-            <img style="width: 100%;" src="https://f1729.github.io/hackathon-bcrp/imagenes/logo.png"> 
+        <transition name="fade">
+          <div class="modal" v-show="showModal" v-on:click="showModal = false;">
+            <div class="bcrp-logo" style="position: absolute;top: 50%;width: 30px;left: 50%;margin-left: 44px;margin-top: -40px;">
+              <img style="width: 100%;" src="https://f1729.github.io/hackathon-bcrp/imagenes/logo.png"> 
+            </div>
+            <h1> Marca de Agua</h1>
+            <div>
+              <span> Hilo de seguridad </span>
+              <br>
+              <div class="imageseguridad">
+                <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
+              </div>
+              <br>
+              <div>
+              Inserto en el papel, al trasluz. Se lee el texto PERU 20 y debajo (con lupa), las siglas BCRP, tres veces. 
+              </div>
+            </div>
+            <div>
+              <span> Microimpresiones </span>
+              <br>
+              <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.11.jpg">
+              <br>
+              <div>
+                Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU).  
+              </div>
+            </div>
           </div>
-          <h1> Marca de Agua</h1>
-        <div>
-          <span> Hilo de seguridad </span>
-          <br>
-          <div class="imageseguridad">
-            <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
-          </div>
-          <br>
-          <div>
-          Inserto en el papel, al trasluz. Se lee el texto PERU 20 y debajo (con lupa), las siglas BCRP, tres veces. 
-          </div>
-        </div>
-
-        <div>
-          <span> Microimpresiones </span>
-          <br>
-          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.11.jpg">
-          <br>
-          <div>
-            Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU).  
-          </div>
-        </div>
-
+        </transition>
         <!-- <div>
           <span> Marca de Agua</span>
           <br>
@@ -213,7 +211,7 @@
         </vue-glide>
         -->
         <!--<coverflow :coverList="coverList" :coverWidth="260" :index="2"></coverflow>-->
-      </div>
+      
     </div>
     </transition>
     
@@ -256,7 +254,7 @@
           <v-btn color="rgb(26, 35, 126)" style="color: white;" 
               @click="verifyMoney"> VERIFICAR </v-btn>
           <br>
-          {{messageSuccess}}
+          {{ messageSuccess }}
         </div>
       </div>
     </transition>
@@ -301,6 +299,7 @@ export default {
     cropImg: '',
     codigoDeBillete: '',
     messageSuccess: '',
+    showModal: false,
     coverList: [
       {
         cover: 'https://f1729.github.io/hackathon-bcrp/imagenes/billetes/10a.jpg',
@@ -499,5 +498,16 @@ export default {
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
+  }
+  .modal {
+    padding-top: 50px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background-color: rgba(0,0,0,0.7)
   }
 </style>
