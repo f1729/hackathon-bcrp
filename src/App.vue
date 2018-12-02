@@ -29,28 +29,28 @@
 .anversoNumber{
   position: absolute;
   top: 50%;
-  width: 50px;
+  width: 7%;
   left: 50%;
   margin-left: 100px;
-  margin-top: 22px;
+  margin-top: 38px;
 }
 
 .anversotrouxecolor{
   position: absolute;
   top: 50%;
-  width: 60px;
+  width: 7%;
   left: 50%;
-  margin-left: -85px;
-  margin-top: -38px;
+  margin-left: -80px;
+  margin-top: -18px;
 }
 
 .anversomitad{
 
   position: absolute;
   top: 50%;
-  width: 37px;
+  width: 7%;
   left: 50%;
-  margin-left: -152px;
+  margin-left: -155px;
   margin-top: -70px;
 
 }
@@ -58,19 +58,65 @@
 .anversotira{
   position: absolute;
   top: 50%;
-  width: 30px;
+  width: 7%;
   left: 50%;
   margin-left: -42px;
-  margin-top: -43px;
+  margin-top: -45px;
 }
 
 .anversoMarcaAgua{
   position: absolute;
   top: 50%;
-  width: 59px;
+  width: 7%;
   left: 50%;
   margin-left: -143px;
-  margin-top: -21px;
+  margin-top: -13px;
 }
+
+.imgRedondo{
+  width: 40%;
+}
+
+
+.reversoNumber{
+  position: absolute;
+  top: 50%;
+  width: 7%;
+  left: 50%;
+  margin-left: 110px;
+  margin-top: -67px;
+}
+
+.reversomitad{
+  position: absolute;
+  top: 50%;
+  width: 7%;
+  left: 50%;
+  margin-left: -142px;
+  margin-top: 35px;
+}
+
+.reversoFranja{
+  position: absolute;
+  top: 50%;
+  width: 7%;
+  left: 50%;
+  margin-left: 86px;
+  margin-top: 35px;
+}
+
+.imgCircle{
+  // width:300px;
+  // height:300px;
+  // border-radius:150px;
+  // border:10px solid #666;
+
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
 
 </style>
