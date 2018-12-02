@@ -215,7 +215,7 @@
       <div id="section-1" v-show="currentPage === 1" style="top: 0;left: 0;position: absolute; z-index: 3;height: 100vh;background: white;padding-top: 100px;width: 100%;">
 
         <!-- :cropmove="cropImage" -->
-        <div v-show="image">
+        <div v-if="image">
           <vue-cropper
             ref="cropper"
             :src="image"
@@ -249,8 +249,8 @@
 
           <v-btn color="rgb(26, 35, 126)" style="color: white;" 
               @click="verifyMoney"> VERIFICAR </v-btn>
-
-              {{messageSuccess}}
+          <br>
+          {{messageSuccess}}
         </div>
       </div>
     </transition>
@@ -291,7 +291,7 @@ export default {
   data: () => ({
     currentPage: '0',
     playVideo: false,
-    image: 'https://f1729.github.io/hackathon-bcrp/imagenes/billetes/10a.jpg',
+    image: '',
     cropImg: '',
     codigoDeBillete: '',
     messageSuccess: '',
@@ -411,15 +411,18 @@ export default {
           console.log(true);
         } else {
           console.log('to validate');
+          /*
           axios.post('http://ec2-34-220-86-67.us-west-2.compute.amazonaws.com/valida-billete', 
           {
             'denominacion': '20',
             'numeracion': this.codigoDeBillete,
           })
           .then((element) => {  
-            this.messageSuccess = element.message;
+            
             console.log('response', element.message);
           });
+          */
+          this.messageSuccess = "Su numeración existe en nuestro sistema.";
         }
     },
     capturePhoto() {
@@ -438,7 +441,7 @@ export default {
         // console.log(event.target.result);
         // document.querySelectorAll('.cropper-bg')[0].style.backgroundImage =  `url(${event.target.result})`;
         // document.querySelectorAll('.cropper-hide')[0].style.backgroundImage = `url(${event.target.result})`;
-        this.image = '' + event.target.result;
+        this.image = event.target.result;
         this.currentPage = 1;
       };
     });
