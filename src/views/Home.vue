@@ -61,24 +61,143 @@
     <transition name="fade">
       
       <div id="section-0" v-show="currentPage === 0" style="position: absolute;z-index: 2;height: 100vh;padding-top: 100px;top: 0;width: 100%;left: 0;background: white;">
-          <div class="close-button" style="position: absolute;top: 55px;">
           
-            <v-btn
-              color="#1a237e"
-              flat
-              value="capture"
-              v-on:click="backToHome()">
-              <v-flex xs12>
-                <v-icon>arrow_back_ios</v-icon>
-                <span>Back</span>
-              </v-flex>
-            </v-btn>
+          <div v-if="false">
+            <div class="close-button" style="position: absolute;top: 55px;">
+            
+              <v-btn
+                color="#1a237e"
+                flat
+                value="capture"
+                v-on:click="backToHome()">
+                <v-flex xs12>
+                  <v-icon>arrow_back_ios</v-icon>
+                  <span>Back</span>
+                </v-flex>
+              </v-btn>
+
+
+            </div>
+          <carousel :scrollPerPage="true" :perPage="1">
+            <slide v-for="element in coverList">
+              <img v-bind:src="element.cover" style="width: 300px;">
+            </slide>
+          </carousel>
+        </div>
+        <div>heydy</div>
+
+
+        <!-- tiempo -->
+
+        <!-- 
+
+        <div class="bcrp-logo anversoNumber">
+          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+        </div>
+
+        <div class="bcrp-logo anversotrouxecolor">
+          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+        </div>
+
+        
+        <div class="bcrp-logo anversotira">
+          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+        </div>
+
+        <div class="bcrp-logo anversoMarcaAgua">
+          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+        </div>
+
+        <div>
+          <img src="https://f1729.github.io/hackathon-bcrp/imagenes/billetes/20a.jpg" style="width: 300px;">
+        </div> -->
+
+
+        <div>
+          <img src="https://f1729.github.io/hackathon-bcrp/imagenes/billetes/20b.PNG" style="width: 300px;">
+        </div>
+
+
+        <div class="bcrp-logo reversoNumber">
+          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+        </div>
+
+        <div class="bcrp-logo reversomitad">
+          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+        </div>
+
+        <div class="bcrp-logo reversoFranja">
+          <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
+        </div>
+
+
+
+        <div>
+          <span> Marca de Agua</span>
+          <br>
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
+          <br>
+          <div>
+            hola mundo 
           </div>
-        <carousel :scrollPerPage="true" :perPage="1">
-          <slide v-for="element in coverList">
-            <img v-bind:src="element.cover" style="width: 300px;">
-          </slide>
-        </carousel>
+        </div>
+
+        <div>
+          <span> Marca de Agua</span>
+          <br>
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.11.jpg">
+          <br>
+          <div>
+            hola mundo 
+          </div>
+        </div>
+
+        <div>
+          <span> Marca de Agua</span>
+          <br>
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.2.png">
+          <br>
+          <div>
+            hola mundo 
+          </div>
+        </div>
+
+        <div>
+          <span> Marca de Agua</span>
+          <br>
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.1.png">
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.2.png">
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.3.png">
+          <br>
+          <div>
+            hola mundo 
+          </div>
+        </div>
+
+        <div>
+          <span> Marca de Agua</span>
+          <br>
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.1.png">
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.2.png">
+          <br>
+          <div>
+            hola mundo 
+          </div>
+        </div>
+
+        <div>
+          <span> Marca de Agua</span>
+          <br>
+          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.9.png">
+          <br>
+          <div>
+            hola mundo 
+          </div>
+        </div>
+
+
+
+
         <!--
         <vue-glide :bullet="true">
           <vue-glide-slide v-for="element in coverList" :key="i">
