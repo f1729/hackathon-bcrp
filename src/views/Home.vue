@@ -142,7 +142,7 @@
           <span> Hilo de seguridad </span>
           <br>
           <div class="imageseguridad">
-          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
+            <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
           </div>
           <br>
           <div>
@@ -158,7 +158,7 @@
           <div>
             Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU).  
           </div>
-        </div> -->
+        </div>
 
         <!-- <div>
           <span> Marca de Agua</span>
@@ -214,6 +214,7 @@
         -->
         <!--<coverflow :coverList="coverList" :coverWidth="260" :index="2"></coverflow>-->
       </div>
+    </div>
     </transition>
     
     <transition name="fade">
