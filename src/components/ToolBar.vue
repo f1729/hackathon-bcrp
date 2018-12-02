@@ -6,17 +6,13 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn icon @click="playVideo()">
-      <v-icon>play_circle_filled</v-icon>
+    <v-btn icon @click="capturePhoto()">
+      <v-icon>camera_alt</v-icon>
     </v-btn>
 
     <v-btn icon>
       <v-icon>translate</v-icon>
     </v-btn>
-
-    
-    
-
     <!-- <v-btn icon>
       <v-icon>refresh</v-icon>
     </v-btn>
@@ -36,6 +32,9 @@
     methods: {
       playVideo() {
         this.$emit('clickPlay');
+      },
+      capturePhoto() {
+        this.$emit('capturePhoto');
       }
     }
   };
