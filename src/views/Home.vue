@@ -84,10 +84,8 @@
             </slide>
           </carousel>
         </div>
-        <div>heydy</div>
 
-
-        <!-- tiempo -->
+        <!--  Billete anverso -->
 
         <!-- 
 
@@ -113,7 +111,8 @@
         </div> -->
 
 
-        <div>
+        <!--  Billete reverso -->
+        <!-- <div>
           <img src="https://f1729.github.io/hackathon-bcrp/imagenes/billetes/20b.PNG" style="width: 300px;">
         </div>
 
@@ -128,21 +127,28 @@
 
         <div class="bcrp-logo reversoFranja">
           <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
-        </div>
+        </div> -->
 
 
+        <!-- modal de codigo de seguridad -->
 
-        <div>
-          <span> Marca de Agua</span>
+        <div class="modal">
+
+          <div class="bcrp-logo" style="position: absolute;top: 50%;width: 30px;left: 50%;margin-left: 44px;margin-top: -40px;">
+            <img style="width: 100%;" src="https://f1729.github.io/hackathon-bcrp/imagenes/logo.png"> 
+          </div>
+          <h1> Marca de Agua</h1>
           <br>
+          <div class="imageseguridad">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
+          </div>
           <br>
-          <div>
+          <div class="message">
             hola mundo 
           </div>
         </div>
 
-        <div>
+        <!-- <div >
           <span> Marca de Agua</span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.11.jpg">
@@ -150,9 +156,9 @@
           <div>
             hola mundo 
           </div>
-        </div>
+        </div> -->
 
-        <div>
+        <!-- <div>
           <span> Marca de Agua</span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.2.png">
@@ -193,10 +199,7 @@
           <div>
             hola mundo 
           </div>
-        </div>
-
-
-
+        </div> -->
 
         <!--
         <vue-glide :bullet="true">

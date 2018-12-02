@@ -116,6 +116,21 @@
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  
+}
+
+.imgseguridad{
+  float:flex;
+}
+
+.modal{
+  background-color: rgba(0, 0, 255, 0.26);
+  width: auto;
+  height: inherit;
+}
+
+.message{
+  float:flex;
 }
 
 
