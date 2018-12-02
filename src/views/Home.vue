@@ -133,65 +133,63 @@
 
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Hilo de seguridad </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
           <br>
           <div>
-            hola mundo 
+          Inserto en el papel, al trasluz. Se lee el texto PERU 20 y debajo (con lupa), las siglas BCRP, tres veces. 
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Microimpresiones </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.11.jpg">
           <br>
           <div>
-            hola mundo 
+            Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU).  
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Marca de Agua </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.2.png">
           <br>
           <div>
-            hola mundo 
+          Al trasluz, el billete cuenta con una marca de agua con tres zonas: el rostro de Raúl Porras Barrenechea, el número 20 y la silueta de un libro.   
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Complete el número 20 (Registro Perfecto) </span>
           <br>
-          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.1.png">
-          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.2.png">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.3.png">
           <br>
           <div>
-            hola mundo 
+            Por el anverso se observa, el número 20 de color marron, incompleto. Por el reverso se ve el número 20 de color celeste, incompleto. Al colocar el billete al trasluz se observa completo el número 20, coincidiendo en ambos colores.   
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Tinta que cambia de color  /span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.1.png">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.2.png">
           <br>
           <div>
-            hola mundo 
+           Colocando el billete a la altura de los ojos se aprecia el número 20 de color fucsia, al girar el billete, el color cambia a verde.   
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Microimpresiones </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.9.png">
           <br>
           <div>
-            hola mundo 
+           Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU). 
           </div>
         </div>
 
