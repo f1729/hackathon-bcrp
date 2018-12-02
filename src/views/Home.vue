@@ -173,7 +173,7 @@
         </div>
 
         <div>
-          <span> Tinta que cambia de color  /span>
+          <span> Tinta que cambia de color  </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.1.png">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.2.png">
