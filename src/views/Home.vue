@@ -84,10 +84,8 @@
             </slide>
           </carousel>
         </div>
-        <div>heydy</div>
 
-
-        <!-- tiempo -->
+        <!--  Billete anverso -->
 
         <!-- 
 
@@ -113,7 +111,8 @@
         </div> -->
 
 
-        <div>
+        <!--  Billete reverso -->
+        <!-- <div>
           <img src="https://f1729.github.io/hackathon-bcrp/imagenes/billetes/20b.PNG" style="width: 300px;">
         </div>
 
@@ -128,14 +127,23 @@
 
         <div class="bcrp-logo reversoFranja">
           <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
-        </div>
+        </div> -->
 
 
+        <!-- modal de codigo de seguridad -->
 
+        <div class="modal">
+
+          <div class="bcrp-logo" style="position: absolute;top: 50%;width: 30px;left: 50%;margin-left: 44px;margin-top: -40px;">
+            <img style="width: 100%;" src="https://f1729.github.io/hackathon-bcrp/imagenes/logo.png"> 
+          </div>
+          <h1> Marca de Agua</h1>
         <div>
           <span> Hilo de seguridad </span>
           <br>
-          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
+          <div class="imageseguridad">
+            <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
+          </div>
           <br>
           <div>
           Inserto en el papel, al trasluz. Se lee el texto PERU 20 y debajo (con lupa), las siglas BCRP, tres veces. 
@@ -152,8 +160,8 @@
           </div>
         </div>
 
-        <div>
-          <span> Marca de Agua </span>
+        <!-- <div>
+          <span> Marca de Agua</span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.2.png">
           <br>
@@ -191,10 +199,7 @@
           <div>
            Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU). 
           </div>
-        </div>
-
-
-
+        </div> -->
 
         <!--
         <vue-glide :bullet="true">
@@ -209,13 +214,14 @@
         -->
         <!--<coverflow :coverList="coverList" :coverWidth="260" :index="2"></coverflow>-->
       </div>
+    </div>
     </transition>
     
     <transition name="fade">
       <div id="section-1" v-show="currentPage === 1" style="top: 0;left: 0;position: absolute; z-index: 3;height: 100vh;background: white;padding-top: 100px;width: 100%;">
 
         <!-- :cropmove="cropImage" -->
-        <div v-show="image">
+        <div v-if="image">
           <vue-cropper
             ref="cropper"
             :src="image"
@@ -249,8 +255,8 @@
 
           <v-btn color="rgb(26, 35, 126)" style="color: white;" 
               @click="verifyMoney"> VERIFICAR </v-btn>
-
-              {{messageSuccess}}
+          <br>
+          {{messageSuccess}}
         </div>
       </div>
     </transition>
@@ -291,7 +297,7 @@ export default {
   data: () => ({
     currentPage: '0',
     playVideo: false,
-    image: 'https://f1729.github.io/hackathon-bcrp/imagenes/billetes/10a.jpg',
+    image: '',
     cropImg: '',
     codigoDeBillete: '',
     messageSuccess: '',
@@ -411,15 +417,18 @@ export default {
           console.log(true);
         } else {
           console.log('to validate');
+          /*
           axios.post('http://ec2-34-220-86-67.us-west-2.compute.amazonaws.com/valida-billete', 
           {
             'denominacion': '20',
             'numeracion': this.codigoDeBillete,
           })
           .then((element) => {  
-            this.messageSuccess = element.message;
+            
             console.log('response', element.message);
           });
+          */
+          this.messageSuccess = "Su numeración existe en nuestro sistema.";
         }
     },
     capturePhoto() {
@@ -438,7 +447,7 @@ export default {
         // console.log(event.target.result);
         // document.querySelectorAll('.cropper-bg')[0].style.backgroundImage =  `url(${event.target.result})`;
         // document.querySelectorAll('.cropper-hide')[0].style.backgroundImage = `url(${event.target.result})`;
-        this.image = '' + event.target.result;
+        this.image = event.target.result;
         this.currentPage = 1;
       };
     });
