@@ -11,6 +11,7 @@ import VueGlide from 'vue-glide-js'
 import 'vue-glide-js/dist/vue-glide.css'
 Vue.use(VueGlide)
 */
+import VueCropper from 'vue-cropperjs';
 import VueCarousel from 'vue-carousel';
 import vueSmoothScroll from 'vue2-smooth-scroll';
 
