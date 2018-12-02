@@ -2,7 +2,7 @@
   <v-toolbar dark color="#1a237e">
     <v-toolbar-side-icon></v-toolbar-side-icon>
 
-    <v-toolbar-title class="white--text">BCRPP</v-toolbar-title>
+    <v-toolbar-title class="white--text">BCRP</v-toolbar-title>
 
     <v-spacer></v-spacer>
 
