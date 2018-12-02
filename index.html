@@ -22,15 +22,11 @@
   <script type="text/javascript">
     const camera = document.getElementById('inputCamera');
     camera.addEventListener('change', (file) => {
-      alert('EVENT DONE');
       const ouputFile = new FileReader();
       ouputFile.readAsDataURL(camera.files[0]);
       ouputFile.onload = (event) => {
-        // console.log(event.target.result);
-        alert('HOLA' + event.target.result.split(1, 30));
         document.getElementById('uploadPreview').src = event.target.result;
       };
-
       console.log('image done!', file);
     });
   </script>
