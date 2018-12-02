@@ -138,23 +138,25 @@
             <img style="width: 100%;" src="https://f1729.github.io/hackathon-bcrp/imagenes/logo.png"> 
           </div>
           <h1> Marca de Agua</h1>
+        <div>
+          <span> Hilo de seguridad </span>
           <br>
           <div class="imageseguridad">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
           </div>
           <br>
-          <div class="message">
-            hola mundo 
+          <div>
+          Inserto en el papel, al trasluz. Se lee el texto PERU 20 y debajo (con lupa), las siglas BCRP, tres veces. 
           </div>
         </div>
 
-        <!-- <div >
-          <span> Marca de Agua</span>
+        <div>
+          <span> Microimpresiones </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.11.jpg">
           <br>
           <div>
-            hola mundo 
+            Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU).  
           </div>
         </div> -->
 
@@ -164,40 +166,38 @@
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.2.png">
           <br>
           <div>
-            hola mundo 
+          Al trasluz, el billete cuenta con una marca de agua con tres zonas: el rostro de Raúl Porras Barrenechea, el número 20 y la silueta de un libro.   
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Complete el número 20 (Registro Perfecto) </span>
           <br>
-          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.1.png">
-          <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.2.png">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.3.3.png">
           <br>
           <div>
-            hola mundo 
+            Por el anverso se observa, el número 20 de color marron, incompleto. Por el reverso se ve el número 20 de color celeste, incompleto. Al colocar el billete al trasluz se observa completo el número 20, coincidiendo en ambos colores.   
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Tinta que cambia de color  </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.1.png">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.4.2.png">
           <br>
           <div>
-            hola mundo 
+           Colocando el billete a la altura de los ojos se aprecia el número 20 de color fucsia, al girar el billete, el color cambia a verde.   
           </div>
         </div>
 
         <div>
-          <span> Marca de Agua</span>
+          <span> Microimpresiones </span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.9.png">
           <br>
           <div>
-            hola mundo 
+           Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU). 
           </div>
         </div> -->
 
@@ -217,9 +217,45 @@
     </transition>
     
     <transition name="fade">
-      <div id="section-1" v-show="currentPage === 1" style="top: 0;left: 0;position: absolute; z-index: 3;height: 100vh;background: white;padding-top: 100px;">
-        <div>
-          <img id="uploadPreview" style="width: 70%;height: auto;">
+      <div id="section-1" v-show="currentPage === 1" style="top: 0;left: 0;position: absolute; z-index: 3;height: 100vh;background: white;padding-top: 100px;width: 100%;">
+
+        <!-- :cropmove="cropImage" -->
+        <div v-show="image">
+          <vue-cropper
+            ref="cropper"
+            :src="image"
+            alt="Source Image">
+          </vue-cropper>
+          <!-- <img id="uploadPreview" style="width: 70%;height: auto;"> -->
+          
+          <!-- <img  id="imageCrop":src="cropImg" style="width: 200px; height: 150px; border: 1px solid gray" alt="Cropped Image" /> -->
+
+          <v-btn color="rgb(26, 35, 126)" style="color: white;" 
+              @click="cropImage"> OBTENER CODIGO </v-btn>
+          
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <div style="text-align: center;">
+            <span>Hemos obtenido el siguiente codigo: </span>
+            <br>
+            <br>
+            <div style="width: 200px;text-align: center;margin: 0 auto;">
+              <v-text-field
+                label="Codigo"
+                solo
+                v-model="codigoDeBillete"
+              ></v-text-field>              
+            </div>
+
+          </div>
+
+          <v-btn color="rgb(26, 35, 126)" style="color: white;" 
+              @click="verifyMoney"> VERIFICAR </v-btn>
+
+              {{messageSuccess}}
         </div>
       </div>
     </transition>
@@ -242,6 +278,7 @@ import ToolBar from '../components/ToolBar.vue';
 import coverflow from 'vue-coverflow';
 import { Glide, GlideSlide } from 'vue-glide-js'
 import { Carousel, Slide } from 'vue-carousel';
+import axios from 'axios';
 
 let camera;
 
@@ -259,6 +296,10 @@ export default {
   data: () => ({
     currentPage: '0',
     playVideo: false,
+    image: 'https://f1729.github.io/hackathon-bcrp/imagenes/billetes/10a.jpg',
+    cropImg: '',
+    codigoDeBillete: '',
+    messageSuccess: '',
     coverList: [
       {
         cover: 'https://f1729.github.io/hackathon-bcrp/imagenes/billetes/10a.jpg',
@@ -315,6 +356,77 @@ export default {
       }
       console.log(this.$refs.carousel.currentPage);
     },
+    cropImage() {
+      // get image data for post processing, e.g. upload or setting image src
+      this.cropImg = this.$refs.cropper.getCroppedCanvas().toDataURL();
+      // const can = document.getElementById('imageCrop');
+      
+
+      try {
+        Tesseract.recognize(this.cropImg, { lang:'spa',
+                                            tessedit_char_whitelist: '0123456789QWERTYUIOPASDFGHJKLZXCVBNM'
+        })
+        .then((result) => {
+          console.log('Tesseract done ->', result.text.trim().replace(/\n/g, ''));
+          // this.codigoDeBillete = result.text.trim().replace(/\n/g, '');
+        });
+      } catch (e) {
+        console.log(e);
+      }
+
+      const sourceForGoogle = this.cropImg.split('data:image/png;base64,')[1];
+      axios.post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyD-UNkhhvPYZ5uIxLrLITxD350HI42W_bQ', 
+      {
+        "requests": [{
+          "features": [{ 
+            "type": "TEXT_DETECTION"
+
+          }],
+          "image": {
+            "content": sourceForGoogle,
+          }
+        }]
+      })
+      .then((response) => {
+        this.codigoDeBillete = response.data.responses[0].textAnnotations[0].description.replace(/\W/g, '');
+        console.log('google done ->', response.data.responses[0].textAnnotations[0].description.replace(/\W/g, ''));
+
+
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    },
+
+    verifyMoney() {
+        /*
+        axios.get('http://34.220.86.67/billetes')
+        .then((response) => {
+          return response[0].filter(element => element.numeracion === this.codigoDeBillete);
+        })
+        */
+
+        const fakes = [{"id":1,"denominacion":"20","numeracion":"C3208927E"},{"id":2,"denominacion":"20","numeracion":"B2942453G"},{"id":3,"denominacion":"20","numeracion":"A9638214J"},{"id":4,"denominacion":"20","numeracion":"A0331602A"},{"id":5,"denominacion":"20","numeracion":"A0239612B"},{"id":6,"denominacion":"100","numeracion":"C4692338D"},{"id":7,"denominacion":"100","numeracion":"C0029425D"},{"id":8,"denominacion":"100","numeracion":"A4590096S"},{"id":9,"denominacion":"100","numeracion":"B4864122A"},{"id":10,"denominacion":"100","numeracion":"A2423134B"}];
+
+        const filterInFakes = fakes.filter(element => element.numeracion === this.codigoDeBillete);
+
+        if (filterInFakes.length > 0) {
+          this.fail = true;
+          console.log(true);
+        } else {
+          console.log('to validate');
+          axios.post('http://ec2-34-220-86-67.us-west-2.compute.amazonaws.com/valida-billete', 
+          {
+            'denominacion': '20',
+            'numeracion': this.codigoDeBillete,
+          })
+          .then((element) => {  
+            this.messageSuccess = element.message;
+            console.log('response', element.message);
+          });
+        }
+    },
     capturePhoto() {
       camera.click();
     },
@@ -325,19 +437,23 @@ export default {
     // Screen.lockOrientation('landscape-primary');
     camera = document.getElementById('inputCamera');
     camera.addEventListener('change', (file) => {
-      const ouputFile = new FileReader();
+      let ouputFile = new FileReader();
       ouputFile.readAsDataURL(camera.files[0]);
       ouputFile.onload = (event) => {
-        document.getElementById('uploadPreview').src = event.target.result;
+        // console.log(event.target.result);
+        // document.querySelectorAll('.cropper-bg')[0].style.backgroundImage =  `url(${event.target.result})`;
+        // document.querySelectorAll('.cropper-hide')[0].style.backgroundImage = `url(${event.target.result})`;
+        this.image = '' + event.target.result;
         this.currentPage = 1;
       };
-
-      console.log('image done!', file);
     });
   }
 };
 </script>
 <style type="text/css">
+  .cropper-container {
+    margin: 0 auto;
+  }
   #section-0 .v-icon{
     width: 35px;
   }
