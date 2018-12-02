@@ -84,10 +84,8 @@
             </slide>
           </carousel>
         </div>
-        <div>heydy</div>
 
-
-        <!-- tiempo -->
+        <!--  Billete anverso -->
 
         <!-- 
 
@@ -113,7 +111,8 @@
         </div> -->
 
 
-        <div>
+        <!--  Billete reverso -->
+        <!-- <div>
           <img src="https://f1729.github.io/hackathon-bcrp/imagenes/billetes/20b.PNG" style="width: 300px;">
         </div>
 
@@ -128,14 +127,23 @@
 
         <div class="bcrp-logo reversoFranja">
           <img class="imgRedondo" src="https://f1729.github.io/hackathon-bcrp/imagenes/e_seguridad/p2.png"> 
-        </div>
+        </div> -->
 
 
+        <!-- modal de codigo de seguridad -->
 
+        <div class="modal">
+
+          <div class="bcrp-logo" style="position: absolute;top: 50%;width: 30px;left: 50%;margin-left: 44px;margin-top: -40px;">
+            <img style="width: 100%;" src="https://f1729.github.io/hackathon-bcrp/imagenes/logo.png"> 
+          </div>
+          <h1> Marca de Agua</h1>
         <div>
           <span> Hilo de seguridad </span>
           <br>
+          <div class="imageseguridad">
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.1.png">
+          </div>
           <br>
           <div>
           Inserto en el papel, al trasluz. Se lee el texto PERU 20 y debajo (con lupa), las siglas BCRP, tres veces. 
@@ -150,10 +158,10 @@
           <div>
             Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU).  
           </div>
-        </div>
+        </div> -->
 
-        <div>
-          <span> Marca de Agua </span>
+        <!-- <div>
+          <span> Marca de Agua</span>
           <br>
           <img class="imgCircle" src="https://f1729.github.io/hackathon-bcrp/codigoSeguridad/20/20.2.png">
           <br>
@@ -191,10 +199,7 @@
           <div>
            Con ayuda de una lupa se lee textos microimpresos (BCRP y PERU). 
           </div>
-        </div>
-
-
-
+        </div> -->
 
         <!--
         <vue-glide :bullet="true">
